@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "Recipe-App-C2C": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Recipe-App-C2C"
+    }
+  },
+  "defaultProject": "Recipe-App-C2C",
+  "cli": {
+    "analytics": "206a4a69-a67b-47f8-81af-1f9860ebd220"
+  }
 }
