@@ -1,1 +1,58 @@
-<p>recipe-detail works!</p>
+<div class="row">
+    <div class="col-sx-12">
+        <img [src]="recipe.imagePath" alt="{{recipe.name}}" class="img-responsive" style="max-height: 300px;">
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h1>{{recipe.name}}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="btn-group" appDropdown>
+            <button type="button" class="btn btn-primary dropdown toggle">Manage Recipe
+               <span class="caret"></span>
+           </button>
+            <ul class="dropdown-menu">
+
+                <li><a style="cursor :pointer;" (click)="onEditRecipe()">Edit Recipe</a></li>
+                <li><a style="cursor :pointer;" (click)="onDeleteRecipe()">Delete Recipe</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h1 class="display-4">Description</h1>
+        {{ recipe.description}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h1 class="display-4">Meal Type</h1>
+        {{ recipe.mealType}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h1 class="display-4">Difficutly level </h1>
+        {{ recipe.difficultyLevel}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h1 class="display-4">Ingredients</h1>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let ing of recipe.ingredient">
+                {{ing.name}} - {{ing.amount}}
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h1 class="display-4">How to do ?</h1>
+        {{ recipe.preparationSteps}}
+    </div>
+</div>
