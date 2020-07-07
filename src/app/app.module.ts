@@ -18,6 +18,7 @@ import { AuthInterceptor} from '../app/auth/auth-interceptor.service';
 import { RecipeService} from '../app/recipes/recipe.service';
 import { AlertComponent } from './shared/alert/alert.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
     DropdownDirective,
     AlertComponent,
     LoadingSpinnerComponent,
+    HomeComponent,
    
   ],
   imports: [
