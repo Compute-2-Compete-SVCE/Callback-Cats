@@ -1,3 +1,92 @@
-<h3>recipe edit works
+<div class="row">
+    <div class="col-xs-12">
+        <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="submit" class="btn btn-success" style="margin-right: 10px;" [disabled]="!recipeForm.valid">Save</button>
+                    <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" formControlName="name" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="imagePath">Image URL</label>
+                        <input type="text" id="imagePath" formControlName="imagePath" class="form-control" #imagePath>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <img [src]="imagePath.value" class="img-responsive">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="mealType">Meal Type</label>
+                    <input type="text" id="mealType" formControlName="mealType" class="form-control" placeholder="BreakFast | Lunch | Elevenses | Dinner">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="difficultyLevel">Difficulty Level</label>
+                    <input type="text" id="difficultyLevel" formControlName="difficultyLevel" class="form-control" placeholder="East | Intermediate | Hard">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea type="text" id="description" class="form-control" formControlName="description" rows="6"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12" formArrayName="ingredients">
+                    <div class="row" *ngFor="let ingredientCtrl of controls; let i=index" [formGroupName]="i" style="margin-top: 10px;">
+                        <div class="col-xs-8">
+                            <input type="text" class="form-control" formControlName="name">
+                        </div>
+                        <div class="col-xs-2">
+                            <input type="number" class="form-control" formControlName="amount">
+                        </div>
+                        <div class="col-xs-2">
+                            <button type="button" class="btn btn-danger" (click)="onDeleteIngrdient(i)">X</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button type="button" class="btn btn-success" (click)="onAdd()" style="margin-top: 10px;">Add Ingredient</button>
+                        </div>
+                    </div>
 
-</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12" formArrayName="steps">
+                    <div class="row" *ngFor="let stepsCtrl of psteps; let i=index" [formGroupName]="i" style="margin-top: 10px;">
+                        <div class="col-xs-8">
+                            <input type="text" class="form-control" formControlName="psteps">
+                        </div>
+                        <div class="col-xs-2">
+                            <button type="button" class="btn btn-danger" (click)="onDeleteSteps(i)">X</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button type="button" class="btn btn-success" (click)="onAddSteps()" style="margin-top: 10px;">Add Steps</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

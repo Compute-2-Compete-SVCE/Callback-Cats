@@ -1,4 +1,5 @@
 import { Ingredient } from '../Shared/Ingredient.model';
+import { PreparationSteps } from '../shared/preparation-steps.model';
 
 export class Recipe
 {
@@ -8,9 +9,9 @@ export class Recipe
     public mealType :string;
     public difficultyLevel : string;
     public ingredient : Ingredient[];
-    public preparationSteps : string;
+    public preparationSteps : PreparationSteps[];
 
-    constructor(name:string , desc:string , imagePath:string ,meal : string,difficulty : string ,ingredient : Ingredient[] , preparation : string){
+    constructor(name:string , desc:string , imagePath:string ,meal : string,difficulty : string ,ingredient : Ingredient[] , preparation : PreparationSteps[]){
         this.name=name;
         this.description=desc;
         this.imagePath=imagePath;

@@ -10,7 +10,7 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <div class="btn-group" appDropdown>
+        <div class="btn-group " appDropdown>
             <button type="button" class="btn btn-primary dropdown toggle">Manage Recipe
                <span class="caret"></span>
            </button>
@@ -52,7 +52,11 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <h1 class="display-4">How to do ?</h1>
-        {{ recipe.preparationSteps}}
+        <h1 class="display-4">Preparation Steps</h1>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let s of recipe.preparationSteps;">
+                {{s.steps}}
+            </li>
+        </ul>
     </div>
 </div>

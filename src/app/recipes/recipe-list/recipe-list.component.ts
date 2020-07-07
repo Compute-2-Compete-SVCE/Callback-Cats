@@ -22,9 +22,12 @@ export class RecipeListComponent implements OnInit {
     )
     this.recipies=this.recipeService.getRecipes();
   }
-
+  
   onNewRecipe(){
-    
-    
+    this.router.navigate(['new'],{relativeTo : this.route})
+  }
+
+  ngOnDestroy(){
+      this.subscription.unsubscribe();
   }
 }

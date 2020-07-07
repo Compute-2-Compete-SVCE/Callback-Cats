@@ -22,6 +22,9 @@ export class RecipeDetailComponent implements OnInit {
         this.recipe=this.recipeService.getRecipeByIndex(this.id);
       }
     )
+  
+  
+    
   }
   
   onEditRecipe(){
